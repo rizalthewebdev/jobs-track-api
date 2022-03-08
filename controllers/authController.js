@@ -1,6 +1,5 @@
 const User = require("../models/UserModel");
 const { StatusCodes } = require("http-status-codes");
-const jwt = require("jsonwebtoken");
 const { BadRequestError, UnauthenticatedError } = require("../errors");
 
 const register = async (req, res) => {

@@ -1,6 +1,6 @@
 // Import & use package
 require("dotenv").config();
-require("express-async-error");
+require("express-async-errors");
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -8,6 +8,8 @@ const cors = require("cors");
 const connectDB = require("./db/connect");
 const authRoutes = require("./routes/auth");
 const jobRoutes = require("./routes/jobs");
+
+const authenticatedUser = require('./middleware/authentication')
 
 // Import error middleware
 const notFoundMiddleware = require("./middleware/not-found");
@@ -19,7 +21,7 @@ app.use(cors());
 
 // Routes
 app.use("/api/v1/auth", authRoutes);
-app.use("/api/v1/jobs", jobRoutes);
+app.use("/api/v1/jobs",authenticatedUser, jobRoutes);
 
 // Use error middleware
 app.use(notFoundMiddleware);
