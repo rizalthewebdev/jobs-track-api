@@ -39,6 +39,8 @@ app.use(helmet());
 app.use(cors());
 app.use(xss());
 
+app.get("/", (req, res) => res.send("<h1>Jobs API</h1>"));
+
 // Route to authenntication
 app.use("/api/v1/auth", authRoutes);
 
