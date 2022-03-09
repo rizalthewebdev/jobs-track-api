@@ -34,7 +34,8 @@ app.set("trust proxy", 1);
 app.use(
    rateLimiter({
       windowMs: 15 * 60 * 1000, // 15 minutes
-      max: 100, //limit each IP to 100 request per windowsMs
+      max: 25, //limit each IP to 100 request per windowsMs
+      message: 'Too many request from this IP, please try again after 15 minutes'
    })
 );
 

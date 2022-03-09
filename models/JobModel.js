@@ -4,12 +4,22 @@ const JobSchema = new mongoose.Schema({
    company: {
       type: String,
       required: [true, "Please provide company name"],
-      maxlength: 60,
+      maxlength: 50,
    },
    position: {
       type: String,
       required: [true, "Please provide position"],
       maxlength: 100,
+   },
+   jobLocation: {
+      type: String,
+      default: 'job city',
+      required: true,
+   },
+   jobType: {
+      type: String,
+      enum: ["full time", "part time", "remote", "internship"],
+      default: "full time",
    },
    status: {
       type: String,
