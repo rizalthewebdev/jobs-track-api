@@ -61,7 +61,7 @@ const updateUser = (req, res) => {
    }
 
    // Find the user is ID
-   const user = await User.findOne({ _id: req.user.userId });
+   const user = User.findOne({ _id: req.user.userId });
 
    // Update the data
    user.email = email;
