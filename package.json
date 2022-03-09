@@ -9,7 +9,13 @@
   "scripts": {
     "start": "node app.js"
   },
-  "keywords": ["rest-api", "nodejs", "expressjs", "mongoose", "mern"],
+  "keywords": [
+    "rest-api",
+    "nodejs",
+    "expressjs",
+    "mongoose",
+    "mern"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
