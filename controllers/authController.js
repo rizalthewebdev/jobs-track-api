@@ -52,7 +52,7 @@ const login = async (req, res) => {
    });
 };
 
-const updateUser = (req, res) => {
+const updateUser = async (req, res) => {
    const { email, name, location } = req.body;
 
    // Null value validation
@@ -61,7 +61,7 @@ const updateUser = (req, res) => {
    }
 
    // Find the user is ID
-   const user = User.findOne({ _id: req.user.userId });
+   const user = await User.findOne({ _id: req.user.userId });
 
    // Update the data
    user.email = email;
