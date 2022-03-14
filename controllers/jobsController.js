@@ -2,6 +2,7 @@ const Job = require("../models/JobModel");
 const { StatusCodes } = require("http-status-codes");
 const { BadRequestError, NotFoundError } = require("../errors");
 const checkPermisions = require("../utils/checkPermision");
+const moment = require('moment')
 
 const getAllJobs = async (req, res) => {
    const { status, jobType, sort, search } = req.query;
