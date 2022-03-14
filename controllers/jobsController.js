@@ -47,7 +47,7 @@ const getAllJobs = async (req, res) => {
 
    result = result.skip(skip).limit(limit);
 
-   const job = await result;
+   const jobs = await result;
 
    const totalJobs = await Job.countDocuments(queryObject);
    const numOfPages = Math.ceil(totalJobs / limit);
