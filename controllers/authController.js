@@ -53,7 +53,7 @@ const login = async (req, res) => {
 };
 
 const updateUser = async (req, res) => {
-   const { email, name, location } = req.body;
+   const { email, name } = req.body;
 
    // Null value validation
    if (!email || !name) {
