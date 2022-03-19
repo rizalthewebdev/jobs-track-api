@@ -56,7 +56,7 @@ const updateUser = async (req, res) => {
    const { email, name, location } = req.body;
 
    // Null value validation
-   if (!email || !name || !location) {
+   if (!email || !name) {
       throw new BadRequestError("Please provide all values");
    }
 
@@ -66,7 +66,6 @@ const updateUser = async (req, res) => {
    // Update the data
    user.email = email;
    user.name = name;
-   user.location = location;
 
    // Save the update to DB
    await user.save();
